@@ -2,10 +2,11 @@ import type { ReactNode } from "react";
 import {
   DeepSeekLogo,
   GoogleLogo,
-  IBMLogo,
+  KIMILogo,
   MetaLogo,
-  MistralLogo,
+  OpenAILogo,
   QWenLogo,
+  ZhiPuLogo,
 } from "@/components/logo";
 
 export interface Model {
@@ -24,6 +25,40 @@ const defaultLogo = (
 
 export const modelList: Model[] = [
   {
+    id: "@cf/moonshotai/kimi-k2.5",
+    name: "kimi-k2.5",
+    logo: <KIMILogo />,
+    type: "Text Generation",
+    input: ["image"],
+    provider: "workers-ai",
+    tag: ["new"],
+  },
+  {
+    id: "@cf/zai-org/glm-4.7-flash",
+    name: "glm-4.7-flash",
+    logo: <ZhiPuLogo />,
+    type: "Text Generation",
+    provider: "workers-ai",
+    tag: ["new"],
+  },
+  {
+    id: "@cf/openai/gpt-oss-120b",
+    name: "gpt-oss-120b",
+    logo: <OpenAILogo />,
+    type: "Text Generation",
+    provider: "workers-ai",
+    tag: ["new"],
+  },
+  {
+    id: "@cf/google/gemma-4-26b-a4b-it",
+    name: "gemma-4-26b-a4b-it",
+    logo: <GoogleLogo />,
+    type: "Text Generation",
+    input: ["image"],
+    provider: "workers-ai",
+    tag: ["new"],
+  },
+  {
     id: "gemini-2.5-flash",
     name: "gemini-2.5-flash",
     logo: <GoogleLogo />,
@@ -40,31 +75,16 @@ export const modelList: Model[] = [
     provider: "google",
   },
   {
-    id: "@cf/ibm-granite/granite-4.0-h-micro",
-    name: "granite-4.0-h-micro",
-    logo: <IBMLogo />,
-    type: "Text Generation",
-    provider: "workers-ai",
-  },
-  {
     id: "@cf/meta/llama-4-scout-17b-16e-instruct",
-    name: "llama-4-scout",
+    name: "llama-4-scout-17b-16e-instruct",
     logo: <MetaLogo />,
     type: "Text Generation",
-    // input: ["image"],
-    provider: "workers-ai",
-  },
-  {
-    id: "@cf/mistralai/mistral-small-3.1-24b-instruct",
-    name: "mistral-small-3.1",
-    logo: <MistralLogo />,
-    type: "Text Generation",
-    // input: ["image"],
+    input: ["image"],
     provider: "workers-ai",
   },
   {
     id: "@cf/qwen/qwq-32b",
-    name: "qwq",
+    name: "qwq-32b",
     logo: <QWenLogo />,
     type: "Text Generation",
     // input: ["image"],
@@ -72,7 +92,7 @@ export const modelList: Model[] = [
   },
   {
     id: "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
-    name: "deepseek-r1-distill-qwen",
+    name: "deepseek-r1-distill-qwen-32b",
     logo: <DeepSeekLogo />,
     type: "Text Generation",
     provider: "workers-ai",
